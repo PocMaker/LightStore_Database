@@ -23,6 +23,13 @@
     <SqlServerVerification>False</SqlServerVerification>
     <IncludeCompositeObjects>True</IncludeCompositeObjects>
     <TargetDatabaseSet>True</TargetDatabaseSet>
+    <IncludeSchemaNameInFileName>True</IncludeSchemaNameInFileName>
+    <DefaultFilegroup>MAIN_DATA</DefaultFilegroup>
+    <Recovery>FULL</Recovery>
+    <ReadCommittedSnapshot>False</ReadCommittedSnapshot>
+    <MemoryOptimizedElevateToSnapshot>True</MemoryOptimizedElevateToSnapshot>
+    <ChangeTrackingRetentionUnit>Days</ChangeTrackingRetentionUnit>
+    <CompatibilityMode>120</CompatibilityMode>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <OutputPath>bin\Release\</OutputPath>
@@ -61,15 +68,15 @@
     <Folder Include="Administration" />
     <Folder Include="Administration\Schema" />
     <Folder Include="Administration\Tables" />
-    <Folder Include="Administration\Scripts" />
     <Folder Include="Administration\Stored Procedures" />
+    <Folder Include="Scripts" />
+    <Folder Include="Security" />
   </ItemGroup>
   <ItemGroup>
     <Build Include="Storage\MAIN_DATA.sql" />
     <Build Include="Storage\MAIN_INDEX.sql" />
     <Build Include="Storage\Main_Data_1.sql" />
     <Build Include="Storage\Main_Index_1.sql" />
-    <Build Include="Storage\Log.sql" />
     <Build Include="Administration\Schema\Administration.sql" />
     <Build Include="Administration\Tables\Operator.sql" />
     <Build Include="Administration\Stored Procedures\uspGetOperator.sql" />
@@ -77,11 +84,13 @@
     <Build Include="Administration\Stored Procedures\uspDeleteOperator.sql" />
     <Build Include="Administration\Stored Procedures\uspUpdateOperator.sql" />
     <Build Include="Administration\Stored Procedures\uspLoginOperator.sql" />
+    <Build Include="Security\LightStore_User.sql" />
+    <Build Include="Security\LightStore_Login.sql" />
   </ItemGroup>
   <ItemGroup>
-    <PostDeploy Include="Administration\Scripts\Fill_Default_Operator.sql" />
+    <PostDeploy Include="Scripts\Script.PostDeployment1.sql" />
   </ItemGroup>
   <ItemGroup>
-    <RefactorLog Include="LightStore.refactorlog" />
+    <PreDeploy Include="Scripts\Script.PreDeployment1.sql" />
   </ItemGroup>
 </Project>

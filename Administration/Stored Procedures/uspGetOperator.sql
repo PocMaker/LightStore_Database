@@ -10,3 +10,4 @@ BEGIN;
 	WHERE Ope.Id = ISNULL(@p_id, Ope.Id)
 	  AND Ope.Login = ISNULL(@p_login, Ope.Login);
 END;
+GO

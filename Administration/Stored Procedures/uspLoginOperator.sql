@@ -17,7 +17,8 @@ BEGIN;
 
         DECLARE @control varbinary(255) = HASHBYTES('SHA2_256', @Salt + @p_password);
 
-        IF (@control != @Password) RAISERROR('Login and password does not match', 16, 1);;
+        IF (@Password IS NOT NULL OR ISNULL(@p_password, '') != '')
+            IF (@control != @Password) RAISERROR('Login and password does not match', 16, 1);;
 
         EXEC Administration.uspGetOperator @p_id = @Id;
 
