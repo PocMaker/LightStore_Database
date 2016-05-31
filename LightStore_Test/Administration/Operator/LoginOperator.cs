@@ -215,7 +215,7 @@ namespace LightStore_Test
         }
         [TestMethod()]
         [TestCategory("Administration.Operator")]
-        [ExpectedSqlException(Severity = 16, State = 0)]
+        [ExpectedSqlException(Severity = 16, State = 10)]
         public void Error_Unknown_Login()
         {
             SqlDatabaseTestActions testActions = this.Error_Unknown_LoginData;
@@ -245,7 +245,7 @@ namespace LightStore_Test
         }
         [TestMethod()]
         [TestCategory("Administration.Operator")]
-        [ExpectedSqlException(Severity = 16, State = 1)]
+        [ExpectedSqlException(Severity = 16, State = 11)]
         public void Error_Unknown_Password()
         {
             SqlDatabaseTestActions testActions = this.Error_Unknown_PasswordData;

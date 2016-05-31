@@ -507,7 +507,7 @@ namespace LightStore_Test
         }
         [TestMethod()]
         [TestCategory("Administration.Operator")]
-        [ExpectedSqlException(Severity = 16, State = 0)]
+        [ExpectedSqlException(Severity = 16, State = 10)]
         public void Error_FirstName_EMPTY()
         {
             SqlDatabaseTestActions testActions = this.Error_FirstName_EMPTYData;
@@ -524,7 +524,7 @@ namespace LightStore_Test
             }
             catch (SqlException e)
             {
-                Assert.AreEqual("FirstName can't be NULL", e.Message);
+                Assert.AreEqual("FirstName cannot be EMPTY", e.Message);
                 throw e;
             }
             finally
@@ -537,7 +537,7 @@ namespace LightStore_Test
         }
         [TestMethod()]
         [TestCategory("Administration.Operator")]
-        [ExpectedSqlException(Severity = 16, State = 1)]
+        [ExpectedSqlException(Severity = 16, State = 11)]
         public void Error_LastName_EMPTY()
         {
             SqlDatabaseTestActions testActions = this.Error_LastName_EMPTYData;
@@ -554,7 +554,7 @@ namespace LightStore_Test
             }
             catch (SqlException e)
             {
-                Assert.AreEqual("LastName can't be NULL", e.Message);
+                Assert.AreEqual("LastName cannot be EMPTY", e.Message);
                 throw e;
             }
             finally
@@ -567,7 +567,7 @@ namespace LightStore_Test
         }
         [TestMethod()]
         [TestCategory("Administration.Operator")]
-        [ExpectedSqlException(Severity = 16, State = 2)]
+        [ExpectedSqlException(Severity = 16, State = 12)]
         public void Error_Unknown_Operator()
         {
             SqlDatabaseTestActions testActions = this.Error_Unknown_OperatorData;

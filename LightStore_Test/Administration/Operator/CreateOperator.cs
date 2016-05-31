@@ -399,7 +399,7 @@ namespace LightStore_Test
         }
         [TestMethod()]
         [TestCategory("Administration.Operator")]
-        [ExpectedSqlException(Severity = 16, State = 0)]
+        [ExpectedSqlException(Severity = 16, State = 10)]
         public void Error_FirstName_NULL()
         {
             SqlDatabaseTestActions testActions = this.Error_FirstName_NULLData;
@@ -416,7 +416,7 @@ namespace LightStore_Test
             }
             catch (SqlException e)
             {
-                Assert.AreEqual("FirstName can't be NULL", e.Message);
+                Assert.AreEqual("FirstName cannot be EMPTY", e.Message);
                 throw e;
             }
             finally
@@ -429,7 +429,7 @@ namespace LightStore_Test
         }
         [TestMethod()]
         [TestCategory("Administration.Operator")]
-        [ExpectedSqlException(Severity = 16, State = 1)]
+        [ExpectedSqlException(Severity = 16, State = 11)]
         public void Error_LastName_NULL()
         {
             SqlDatabaseTestActions testActions = this.Error_LastName_NULLData;
@@ -446,7 +446,7 @@ namespace LightStore_Test
             }
             catch (SqlException e)
             {
-                Assert.AreEqual("LastName can't be NULL", e.Message);
+                Assert.AreEqual("LastName cannot be EMPTY", e.Message);
                 throw e;
             }
             finally
@@ -459,7 +459,7 @@ namespace LightStore_Test
         }
         [TestMethod()]
         [TestCategory("Administration.Operator")]
-        [ExpectedSqlException(Severity = 16, State = 2)]
+        [ExpectedSqlException(Severity = 16, State = 12)]
         public void Error_Login_NULL()
         {
             SqlDatabaseTestActions testActions = this.Error_Login_NULLData;
@@ -476,7 +476,7 @@ namespace LightStore_Test
             }
             catch (SqlException e)
             {
-                Assert.AreEqual("Login can't be NULL", e.Message);
+                Assert.AreEqual("Login cannot be EMPTY", e.Message);
                 throw e;
             }
             finally
@@ -489,7 +489,7 @@ namespace LightStore_Test
         }
         [TestMethod()]
         [TestCategory("Administration.Operator")]
-        [ExpectedSqlException(Severity = 16, State = 0)]
+        [ExpectedSqlException(Severity = 16, State = 10)]
         public void Error_FirstName_Empty()
         {
             SqlDatabaseTestActions testActions = this.Error_FirstName_EmptyData;
@@ -514,7 +514,7 @@ namespace LightStore_Test
         }
         [TestMethod()]
         [TestCategory("Administration.Operator")]
-        [ExpectedSqlException(Severity = 16, State = 1)]
+        [ExpectedSqlException(Severity = 16, State = 11)]
         public void Error_LastName_Empty()
         {
             SqlDatabaseTestActions testActions = this.Error_LastName_EmptyData;
@@ -539,7 +539,7 @@ namespace LightStore_Test
         }
         [TestMethod()]
         [TestCategory("Administration.Operator")]
-        [ExpectedSqlException(Severity = 16, State = 2)]
+        [ExpectedSqlException(Severity = 16, State = 12)]
         public void Error_Login_Empty()
         {
             SqlDatabaseTestActions testActions = this.Error_Login_EmptyData;
@@ -564,7 +564,7 @@ namespace LightStore_Test
         }
         [TestMethod()]
         [TestCategory("Administration.Operator")]
-        [ExpectedSqlException(Severity = 16, State = 3)]
+        [ExpectedSqlException(Severity = 16, State = 13)]
         public void Error_Login_Already_Exists()
         {
             SqlDatabaseTestActions testActions = this.Error_Login_Already_ExistsData;

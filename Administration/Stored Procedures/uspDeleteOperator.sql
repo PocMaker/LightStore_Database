@@ -1,4 +1,12 @@
-﻿CREATE PROCEDURE [Administration].[uspDeleteOperator]
+﻿---<summary>
+---Delete an existing operator from database thanks to its id
+---</summary>
+---<param name="@p_id" ref="Administration.Operator.Id"/>
+---<exception cref="SqlException">Severity 16
+---     State 255 : Error while deleting operator
+---</exception>     
+---<return>1 if success, 0 otherwise</return>
+CREATE PROCEDURE [Administration].[uspDeleteOperator]
     @p_id int
 AS
 BEGIN;

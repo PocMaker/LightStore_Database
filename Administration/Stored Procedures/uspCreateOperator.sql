@@ -1,4 +1,19 @@
-﻿CREATE PROCEDURE [Administration].[uspCreateOperator]
+﻿---<summary>
+---Insert a new operator in database
+---</summary>
+---<param name="@p_firstName" ref="Administration.Operator.FirstName"/>
+---<param name="@p_lastName" ref="Administration.Operator.LastName"/>
+---<param name="@p_login" ref="Administration.Operator.Login"/>
+---<param name="@p_email" ref="Administration.Operator.Email"/>
+---<exception cref="SqlException">Severity 16
+---     State 10 : Firstname cannot be EMPTY
+---     State 11 : Lastname cannot be EMPTY
+---     State 12 : Login cannot be EMPTY
+---     State 13 : Login already exists
+---     State 255 : Error while creating operator
+---</exception>     
+---<return>1 if success, 0 otherwise</return>
+CREATE PROCEDURE [Administration].[uspCreateOperator]
     @p_firstName varchar(255),
     @p_lastName varchar(255),
     @p_login varchar(255),
@@ -11,10 +26,10 @@ BEGIN;
     BEGIN TRANSACTION;
 
     BEGIN TRY;
-        IF (RTRIM(LTRIM(ISNULL(@p_firstName, ''))) = '') RAISERROR('FirstName can''t be NULL', 16, 0) WITH LOG;
-        IF (RTRIM(LTRIM(ISNULL(@p_lastName, ''))) = '') RAISERROR('LastName can''t be NULL', 16, 1) WITH LOG;
-        IF (RTRIM(LTRIM(ISNULL(@p_login, ''))) = '') RAISERROR('Login can''t be NULL', 16, 2) WITH LOG;
-        IF (EXISTS(SELECT TOP 1 1 FROM Administration.Operator WHERE Login = @p_login)) RAISERROR('Login already exists', 16, 3) WITH LOG;
+        IF (RTRIM(LTRIM(ISNULL(@p_firstName, ''))) = '') RAISERROR('FirstName cannot be EMPTY', 16, 10) WITH LOG;
+        IF (RTRIM(LTRIM(ISNULL(@p_lastName, ''))) = '') RAISERROR('LastName cannot be EMPTY', 16, 11) WITH LOG;
+        IF (RTRIM(LTRIM(ISNULL(@p_login, ''))) = '') RAISERROR('Login cannot be EMPTY', 16, 12) WITH LOG;
+        IF (EXISTS(SELECT TOP 1 1 FROM Administration.Operator WHERE Login = @p_login)) RAISERROR('Login already exists', 16, 13) WITH LOG;
 
         -- Generate the salt
         DECLARE @LCV tinyint = 1,

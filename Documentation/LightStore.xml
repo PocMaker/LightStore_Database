@@ -1,0 +1,183 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>LightStore</name>
+    </assembly>
+    <members>
+        <member name="T:SqlDataType.BigInt">
+            <summary></summary>
+        </member>
+        <member name="T:SqlDataType.Binary">
+            <summary></summary>
+        </member>
+        <member name="T:SqlDataType.Bit">
+            <summary></summary>
+        </member>
+        <member name="T:SqlDataType.Char">
+            <summary></summary>
+        </member>
+        <member name="T:SqlDataType.DateTime">
+            <summary></summary>
+        </member>
+        <member name="T:SqlDataType.Decimal">
+            <summary></summary>
+        </member>
+        <member name="T:SqlDataType.Float">
+            <summary></summary>
+        </member>
+        <member name="T:SqlDataType.Image">
+            <summary></summary>
+        </member>
+        <member name="T:SqlDataType.Int">
+            <summary></summary>
+        </member>
+        <member name="T:SqlDataType.Money">
+            <summary></summary>
+        </member>
+        <member name="T:SqlDataType.NChar">
+            <summary></summary>
+        </member>
+        <member name="T:SqlDataType.None">
+            <summary></summary>
+        </member>
+        <member name="T:SqlDataType.NText">
+            <summary></summary>
+        </member>
+        <member name="T:SqlDataType.Numeric">
+            <summary></summary>
+        </member>
+        <member name="T:SqlDataType.NVarChar">
+            <summary></summary>
+        </member>
+        <member name="T:SqlDataType.NVarCharMax">
+            <summary></summary>
+        </member>
+        <member name="T:SqlDataType.Real">
+            <summary></summary>
+        </member>
+        <member name="T:SqlDataType.SmallDateTime">
+            <summary></summary>
+        </member>
+        <member name="T:SqlDataType.SmallInt">
+            <summary></summary>
+        </member>
+        <member name="T:SqlDataType.SmallMoney">
+            <summary></summary>
+        </member>
+        <member name="T:SqlDataType.SysName">
+            <summary></summary>
+        </member>
+        <member name="T:SqlDataType.Text">
+            <summary></summary>
+        </member>
+        <member name="T:SqlDataType.Timestamp">
+            <summary></summary>
+        </member>
+        <member name="T:SqlDataType.TinyInt">
+            <summary></summary>
+        </member>
+        <member name="T:SqlDataType.UniqueIdentifier">
+            <summary></summary>
+        </member>
+        <member name="T:SqlDataType.UserDefinedDataType">
+            <summary></summary>
+        </member>
+        <member name="T:SqlDataType.UserDefinedType">
+            <summary></summary>
+        </member>
+        <member name="T:SqlDataType.VarBinary">
+            <summary></summary>
+        </member>
+        <member name="T:SqlDataType.VarBinaryMax">
+            <summary></summary>
+        </member>
+        <member name="T:SqlDataType.VarChar">
+            <summary></summary>
+        </member>
+        <member name="T:SqlDataType.VarCharMax">
+            <summary></summary>
+        </member>
+        <member name="T:SqlDataType.Variant">
+            <summary></summary>
+        </member>
+        <member name="T:SqlDataType.Xml">
+            <summary></summary>
+        </member>
+        <member name="T:Database.Procedures">
+            <summary></summary>
+        </member>
+        <member name="M:Database.Procedures.uspCreateOperator(JocysCom.Sql.XmlDocumentation.SqlDataTypes.VarChar,JocysCom.Sql.XmlDocumentation.SqlDataTypes.VarChar,JocysCom.Sql.XmlDocumentation.SqlDataTypes.VarChar,JocysCom.Sql.XmlDocumentation.SqlDataTypes.VarChar)">
+            <summary>
+            Insert a new operator in database
+            </summary>
+            <param name="p_firstName" type="VarChar" size="255">
+            </param>
+            <param name="p_lastName" type="VarChar" size="255">
+            </param>
+            <param name="p_login" type="VarChar" size="255">
+            </param>
+            <param name="p_email" type="VarChar" size="255">
+            </param>
+            <exception cref="T:System.Data.SqlClient.SqlException">Severity 16
+            State 0 : Firstname cannot be EMPTY
+            State 1 : Lastname cannot be EMPTY
+            State 2 : Login cannot be EMPTY
+            State 3 : Login already exists
+            State 255 : Error while creating operator
+            </exception>
+            <return>1 if success, 0 otherwise</return>
+        </member>
+        <member name="M:Database.Procedures.uspDeleteOperator(JocysCom.Sql.XmlDocumentation.SqlDataTypes.Int)">
+            <summary>
+            Delete an existing operator from database thanks to its id
+            </summary>
+            <param name="p_id" type="Int" size="4">
+            </param>
+            <exception cref="T:System.Data.SqlClient.SqlException">Severity 16
+            State 255 : Error while deleting operator
+            </exception>
+            <return>1 if success, 0 otherwise</return>
+        </member>
+        <member name="M:Database.Procedures.uspGetOperator(JocysCom.Sql.XmlDocumentation.SqlDataTypes.Int,JocysCom.Sql.XmlDocumentation.SqlDataTypes.VarChar)">
+            <summary>
+            Select an operator from database thanks to parameters
+            </summary>
+            <param name="p_id" type="Int" size="4">Filter if provided</param>
+            <param name="p_login" type="VarChar" size="255">Filter if provided</param>
+        </member>
+        <member name="M:Database.Procedures.uspLoginOperator(JocysCom.Sql.XmlDocumentation.SqlDataTypes.VarChar,JocysCom.Sql.XmlDocumentation.SqlDataTypes.VarChar)">
+            <summary>
+            Check if provided login and clear password match
+            </summary>
+            <param name="p_login" type="VarChar" size="255">
+            </param>
+            <param name="p_password" type="VarChar" size="255">Clear password to check</param>
+            <exception cref="T:System.Data.SqlClient.SqlException">Severity 16
+            State 0 : Login and password does not match (login unfound)
+            State 1 : Login and password does not match (password do not match)
+            </exception>
+            <return>1 if success, 0 otherwise</return>
+        </member>
+        <member name="M:Database.Procedures.uspUpdateOperator(JocysCom.Sql.XmlDocumentation.SqlDataTypes.Int,JocysCom.Sql.XmlDocumentation.SqlDataTypes.VarChar,JocysCom.Sql.XmlDocumentation.SqlDataTypes.VarChar,JocysCom.Sql.XmlDocumentation.SqlDataTypes.VarChar,JocysCom.Sql.XmlDocumentation.SqlDataTypes.VarChar)">
+            <summary>
+            Insert a new operator in database
+            </summary>
+            <param name="p_id" type="Int" size="4">
+            </param>
+            <param name="p_firstName" type="VarChar" size="255">
+            </param>
+            <param name="p_lastName" type="VarChar" size="255">
+            </param>
+            <param name="p_email" type="VarChar" size="255">
+            </param>
+            <param name="p_password" type="VarChar" size="255">Clear password to replace the actual one</param>
+            <exception cref="T:System.Data.SqlClient.SqlException">Severity 16
+            State 0 : Firstname cannot be EMPTY
+            State 1 : Lastname cannot be EMPTY
+            State 2 : Operator <paramref name="p_id" /> does no longer exist
+            State 255 : Error while updating operator
+            </exception>
+            <return>1 if success, 0 otherwise</return>
+        </member>
+    </members>
+</doc>

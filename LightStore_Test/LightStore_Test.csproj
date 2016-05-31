@@ -46,7 +46,9 @@
     </When>
     <Otherwise>
       <ItemGroup>
-        <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework" />
+        <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework">
+          <Private>False</Private>
+        </Reference>
       </ItemGroup>
     </Otherwise>
   </Choose>
@@ -69,6 +71,24 @@
     <Compile Include="Administration\Operator\UpdateOperator.cs">
       <SubType>Designer</SubType>
     </Compile>
+    <Compile Include="Product\Product\uspGetProduct.cs">
+      <SubType>Designer</SubType>
+    </Compile>
+    <Compile Include="Product\Product\uspCreateProduct.cs">
+      <SubType>Designer</SubType>
+    </Compile>
+    <Compile Include="Product\Packaging\uspCreatePackaging.cs">
+      <SubType>Designer</SubType>
+    </Compile>
+    <Compile Include="Product\Packaging\uspGetPackaging.cs">
+      <SubType>Designer</SubType>
+    </Compile>
+    <Compile Include="Product\Product\uspDeleteProduct.cs">
+      <SubType>Designer</SubType>
+    </Compile>
+    <Compile Include="Product\Packaging\uspDeletePackaging.cs">
+      <SubType>Designer</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
@@ -89,7 +109,26 @@
     <EmbeddedResource Include="Administration\Operator\LoginOperator.resx">
       <DependentUpon>LoginOperator.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Product\Product\uspGetProduct.resx">
+      <DependentUpon>uspGetProduct.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Product\Product\uspCreateProduct.resx">
+      <DependentUpon>uspCreateProduct.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Product\Packaging\uspCreatePackaging.resx">
+      <DependentUpon>uspCreatePackaging.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Product\Packaging\uspGetPackaging.resx">
+      <DependentUpon>uspGetPackaging.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Product\Product\uspDeleteProduct.resx">
+      <DependentUpon>uspDeleteProduct.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Product\Packaging\uspDeletePackaging.resx">
+      <DependentUpon>uspDeletePackaging.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
+  <ItemGroup />
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
       <ItemGroup>

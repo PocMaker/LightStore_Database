@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Operations Version="1.0" xmlns="http://schemas.microsoft.com/sqlserver/dac/Serialization/2012/02">
+  <Operation Name="Rename Refactor" Key="d1067c0a-bc20-4d2a-bff9-59092cf72391" ChangeDateTime="05/27/2016 09:49:44">
+    <Property Name="ElementName" Value="[Administration].[Product].[Unity]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[Administration].[Product]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="Unity " />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="1b522130-bf3d-4f22-9060-31b4c0fd68af" ChangeDateTime="05/27/2016 09:49:49">
+    <Property Name="ElementName" Value="[Administration].[Product].[Unity ]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[Administration].[Product]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="Unity" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="74b132b1-a41a-4f4d-97e1-24e6385fc053" ChangeDateTime="05/27/2016 12:26:07">
+    <Property Name="ElementName" Value="[Product].[Packaging].[From]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[Product].[Packaging]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="FromId" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="a67c6eae-4dfc-4a09-aa86-4df362f590b8" ChangeDateTime="05/27/2016 13:52:02">
+    <Property Name="ElementName" Value="[Product].[Product].[IX_Product_Code]" />
+    <Property Name="ElementType" Value="SqlIndex" />
+    <Property Name="ParentElementName" Value="[Product].[Product]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="[IX_ProductCode]" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="771fef84-d232-46df-9e28-da48fc5a067b" ChangeDateTime="05/27/2016 13:52:15">
+    <Property Name="ElementName" Value="[Product].[Product].[IX_ProductCode]" />
+    <Property Name="ElementType" Value="SqlIndex" />
+    <Property Name="ParentElementName" Value="[Product].[Product]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="[IX_Product-Code]" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="b9198f44-4cd9-4a82-bd44-30e299c103a5" ChangeDateTime="05/27/2016 13:52:48">
+    <Property Name="ElementName" Value="[Product].[Product].[IX_Product-Code]" />
+    <Property Name="ElementType" Value="SqlIndex" />
+    <Property Name="ParentElementName" Value="[Product].[Product]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="[UX_Product-Code]" />
+  </Operation>
+</Operations>

@@ -1,4 +1,19 @@
-﻿CREATE PROCEDURE [Administration].[uspUpdateOperator]
+﻿---<summary>
+---Insert a new operator in database
+---</summary>
+---<param name="@p_id" ref="Administration.Operator.Id"/>
+---<param name="@p_firstName" ref="Administration.Operator.FirstName"/>
+---<param name="@p_lastName" ref="Administration.Operator.LastName"/>
+---<param name="@p_email" ref="Administration.Operator.Email"/>
+---<param name="@p_password">Clear password to replace the actual one</param>
+---<exception cref="SqlException">Severity 16
+---     State 10 : Firstname cannot be EMPTY
+---     State 11 : Lastname cannot be EMPTY
+---     State 12 : Operator <paramref name="@p_id"/> does no longer exist
+---     State 255 : Error while updating operator
+---</exception>     
+---<return>1 if success, 0 otherwise</return>
+CREATE PROCEDURE [Administration].[uspUpdateOperator]
     @p_id int,
     @p_firstName varchar(255) = NULL,
     @p_lastName varchar(255) = NULL,
@@ -9,12 +24,12 @@ BEGIN;
     BEGIN TRANSACTION;
 
     BEGIN TRY;
-        IF (RTRIM(LTRIM(@p_firstName)) = '') RAISERROR('FirstName can''t be NULL', 16, 0) WITH LOG;
-        IF (RTRIM(LTRIM(@p_lastName)) = '') RAISERROR('LastName can''t be NULL', 16, 1) WITH LOG;
+        IF (RTRIM(LTRIM(@p_firstName)) = '') RAISERROR('FirstName cannot be EMPTY', 16, 10) WITH LOG;
+        IF (RTRIM(LTRIM(@p_lastName)) = '') RAISERROR('LastName cannot be EMPTY', 16, 11) WITH LOG;
         IF (NOT EXISTS(SELECT TOP 1 1 FROM Administration.Operator WHERE Id = @p_id))
         BEGIN;
             DECLARE @error varchar(255) = 'Operator "' + CAST(@p_id AS varchar) + '" does no longer exist';
-            RAISERROR(@error, 16, 2) WITH LOG;
+            RAISERROR(@error, 16, 12) WITH LOG;
         END;
 
         UPDATE Administration.Operator

@@ -1,4 +1,9 @@
-﻿CREATE PROCEDURE [Administration].[uspGetOperator]
+﻿---<summary>
+---Select an operator from database thanks to parameters
+---</summary>
+---<param name="@p_id" ref="Administration.Operator.Id">Filter if provided</param>
+---<param name="@p_login" ref="Administration.Operator.Login">Filter if provided</param>
+CREATE PROCEDURE [Administration].[uspGetOperator]
 	@p_id int = NULL,
 	@p_login varchar(255) = NULL
 AS
